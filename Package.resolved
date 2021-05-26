@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "MMJSectionedDataSource",
+        "repositoryURL": "https://github.com/mihaelamj/MMJSectionedDataSource",
+        "state": {
+          "branch": null,
+          "revision": "9bba7944db0a52ca170a1bb6763dc6fda440fa82",
+          "version": "0.1.0"
+        }
+      },
+      {
         "package": "MMJUtils",
         "repositoryURL": "https://github.com/mihaelamj/MMJUtils",
         "state": {

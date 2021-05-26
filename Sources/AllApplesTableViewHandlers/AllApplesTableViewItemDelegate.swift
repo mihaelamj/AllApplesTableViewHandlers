@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AllApplesTableViewItemDelegate: AnyObject {
-  func didTapOn(dataSource: AllApplesTableViewCellProtocol, item: Any)
+  func didTapOn(dataSource: Any, item: Any)
 }

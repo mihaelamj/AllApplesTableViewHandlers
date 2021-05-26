@@ -14,7 +14,7 @@ import AllApples
 class TableViewItemDelegateClass {}
 
 extension TableViewItemDelegateClass: AllApplesTableViewItemDelegate {
-  func didTapOn(dataSource: AllApplesTableViewCellProtocol, item: Any) {
+  func didTapOn(dataSource: Any, item: Any) {
     //
   }
   
