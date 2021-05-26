@@ -19,5 +19,4 @@ extension TableViewItemDelegateClass: AllApplesTableViewItemDelegate {
   func didTapOn(dataSource: Any, item: Any) {
     tapCounter += 1
   }
-  
 }

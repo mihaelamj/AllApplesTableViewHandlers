@@ -19,31 +19,14 @@ import Cocoa
 
 final class AllApplesTableViewItemDelegateTests: XCTestCase {
   
-  static var registrant: AllApplesTableViewRegistrant!
-  static var sectionedDataSource: SectionedDataSourceClass!
-  static var itemDelegate: AllApplesTableViewItemDelegate!
-  
-  static var sut: AllApplesTableViewDelegate!
-  
-  
-  override class func setUp() {
-    registrant = AllApplesTableViewRegistrant(tableCellHandler: TableViewCellProtocolClass())
-    sectionedDataSource = SectionedDataSourceClass()
-    itemDelegate = TableViewItemDelegateClass()
-    sut = AllApplesTableViewDelegate(itemDelegateImplementation: itemDelegate,
-                                     sectionHandlerImplementation: sectionedDataSource,
-                                     registrant: registrant)
+  func testDidTapOnCounter() {
+    let itemDelegate = TableViewItemDelegateClass()
+    XCTAssertEqual(itemDelegate.tapCounter, 0)
+    
+    itemDelegate.didTapOn(dataSource: "Data Source", item: "Item")
+    XCTAssertEqual(itemDelegate.tapCounter, 1)
+    
+    itemDelegate.didTapOn(dataSource: "Data Source", item: "Item")
+    XCTAssertEqual(itemDelegate.tapCounter, 2)
   }
-  
-  func makeAndPrepareTableView() -> ATableView {
-    let tableView = ATableView(frame: CGRect(x: 0, y: 0, width: 100.0, height: 100.0))
-    tableView.delegate = AllApplesTableViewItemDelegateTests.sut
-//    tableView.dataSource =
-//    AllApplesTableViewItemDelegateTests.sut.registrant?.registerReusableViews(with: tableView)
-    tableView.reloadData()
-    return tableView
-  }
-  
-  
-  
 }

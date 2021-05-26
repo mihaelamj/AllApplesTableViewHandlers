@@ -25,6 +25,7 @@ public class AllApplesTableViewDelegate: AllApplesTableViewHandlerClass {
   weak var itemDelegate: AllApplesTableViewItemDelegate?
   weak var sectionHandler: SectionedDataSource?
   weak var registrant: AllApplesTableViewRegistrant?
+  
   #if os(OSX)
   let tableHelper = AllApplesNSTableViewHelper()
   #endif
