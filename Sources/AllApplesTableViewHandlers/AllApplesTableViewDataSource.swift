@@ -21,8 +21,8 @@ import Cocoa
 // MARK: AllApplesTableViewDataSource -
 
 public class AllApplesTableViewDataSource: AllApplesTableViewHandlerClass {
-  weak var sectionHandler: SectionedDataSource?
-  weak var registrant: AllApplesTableViewRegistrant?
+  public weak var sectionHandler: SectionedDataSource?
+  public weak var registrant: AllApplesTableViewRegistrant?
   
   public init(sectionHandlerImplementation: SectionedDataSource? = nil,
               registrant: AllApplesTableViewRegistrant? = nil) {

@@ -22,9 +22,9 @@ import Cocoa
 
 public class AllApplesTableViewDelegate: AllApplesTableViewHandlerClass {
   
-  weak var itemDelegate: AllApplesTableViewItemDelegate?
-  weak var sectionHandler: SectionedDataSource?
-  weak var registrant: AllApplesTableViewRegistrant?
+  public weak var itemDelegate: AllApplesTableViewItemDelegate?
+  public weak var sectionHandler: SectionedDataSource?
+  public weak var registrant: AllApplesTableViewRegistrant?
   
   #if os(OSX)
   let tableHelper = AllApplesNSTableViewHelper()
