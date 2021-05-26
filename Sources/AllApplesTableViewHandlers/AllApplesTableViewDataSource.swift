@@ -23,7 +23,16 @@ import Cocoa
 public class AllApplesTableViewDataSource: AllApplesTableViewHandlerClass {
   weak var sectionHandler: SectionedDataSource?
   weak var registrant: AllApplesTableViewRegistrant?
+  
+  public init(sectionHandlerImplementation: SectionedDataSource? = nil,
+              registrant: AllApplesTableViewRegistrant? = nil) {
+    sectionHandler = sectionHandlerImplementation
+    self.registrant = registrant
+  }
 }
+
+// MARK: -
+// MARK: ATableViewDataSource -
 
 extension AllApplesTableViewDataSource: ATableViewDataSource {
   
@@ -40,7 +49,7 @@ extension AllApplesTableViewDataSource: ATableViewDataSource {
     
     guard let sectionHandler = sectionHandler else { preconditionFailure("Error, no item handler") }
     
-    guard let cellIdentifier = registrant?.tableCellHandler?.tableCellIdentifierFor(indexPath: indexPath) else {
+    guard let cellIdentifier = registrant?.tableCellHandler.tableCellIdentifierFor(indexPath: indexPath) else {
       preconditionFailure("Error, no Cell identifier for item in section: \(indexPath.section), row: \(indexPath.row)!")
     }
     

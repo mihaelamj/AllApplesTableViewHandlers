@@ -21,12 +21,21 @@ import Cocoa
 // MARK: AllApplesTableViewDelegate -
 
 public class AllApplesTableViewDelegate: AllApplesTableViewHandlerClass {
+  
   weak var itemDelegate: AllApplesTableViewItemDelegate?
   weak var sectionHandler: SectionedDataSource?
   weak var registrant: AllApplesTableViewRegistrant?
   #if os(OSX)
   let tableHelper = AllApplesNSTableViewHelper()
   #endif
+  
+  public init(itemDelegateImplementation: AllApplesTableViewItemDelegate? = nil,
+              sectionHandlerImplementation: SectionedDataSource? = nil,
+              registrant: AllApplesTableViewRegistrant? = nil) {
+    self.itemDelegate = itemDelegateImplementation
+    self.sectionHandler = sectionHandlerImplementation
+    self.registrant = registrant
+  }
 }
 
 extension AllApplesTableViewDelegate: ATableViewDelegate {

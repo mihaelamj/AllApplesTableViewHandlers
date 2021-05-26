@@ -11,11 +11,13 @@ import AllApples
 // MARK: -
 // MARK: Class for TableViewItemDelegate -
 
-class TableViewItemDelegateClass {}
+class TableViewItemDelegateClass {
+  var tapCounter = 0
+}
 
 extension TableViewItemDelegateClass: AllApplesTableViewItemDelegate {
   func didTapOn(dataSource: Any, item: Any) {
-    //
+    tapCounter += 1
   }
   
 }
